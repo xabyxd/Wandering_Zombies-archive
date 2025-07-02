@@ -1,20 +1,40 @@
-Mod Name: Wandering Zombies<br>
-Author: Ryuku<br>
-Workshop ID: 2983905789<br>
-Description:<br>
-        This mod allowed zombies to wander dynamically across the map,<br>
-        making the world feel more alive and unpredictable.<br>
-        It provided in-depth configuration for zombie roaming behavior<br>
-        and was widely used to customize world difficulty.<br>
+# Wandering Zombies (Archived Mod)
 
-Status: Unlisted / Removed from Workshop<br>
-Build Compatibility: Project Zomboid Build 41, B42 [ WIP ]<br>
-Last Known Version: Compatible with B41.78.16<br>
-Notes:<br>
-        The author has deleted the entire codebase and ceased support<br>
-        for Project Zomboid. This version is preserved for archival purposes only.<br>
-<br>
-        --[[ no longer supporting Project Zomboid ]]--<br>
-        --[[     reuploads are NOT permitted      ]]--<br>
-<br>
-If you have a newer version and/or want to contribute missing code, feel free to open a pull request.
+**Author:** Ryuku
+**Workshop ID:** `2983905789`
+
+---
+
+## 📦 Status
+
+- **Status:** Removed from Workshop
+- **Build Compatibility:** Project Zomboid Build 41, Build 42 (WIP)
+- **Last Known Version:** Compatible with `B41.78.16`
+- **Workshop Link:** [Steam Community](https://steamcommunity.com/sharedfiles/filedetails/?id=2983905789)
+
+---
+
+## ⚠️ Important Notes
+
+- The author has **deleted the entire codebase** and **ceased support** for Project Zomboid.
+- This version is **preserved for archival purposes only**.
+- **Reuploads are *not* permitted.**
+
+```lua
+--[[ no longer supporting Project Zomboid ]]
+--[[     reuploads are NOT permitted      ]]
+```
+
+---
+
+## 📄 Description
+
+This mod enabled zombies to **wander dynamically across the map**, making the world feel **more alive and unpredictable**.
+It featured **extensive configuration options** for zombie roaming behavior and was widely used to **customize world difficulty**.
+
+---
+
+## 📬 Contributing
+
+If you have a newer version or wish to contribute missing code,
+**feel free to open a pull request.**
