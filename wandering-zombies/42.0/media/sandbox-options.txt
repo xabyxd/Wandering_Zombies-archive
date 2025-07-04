@@ -1,1 +1,959 @@
 VERSION = 1,
+
+option WanderingZombies.Destructive
+{
+    type = enum,
+    numValues = 4,
+    default = 2,
+    page = WanderingZombies,
+    translation = WanderingZombies_Destructive,
+    valueTranslation = WanderingZombies_Destructive,
+}
+
+option WanderingZombies.MaxTravel
+{
+    type = integer,
+    min = 10,
+    max = 100,
+    default = 40,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxTravel,
+}
+
+option WZS.S1
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombies,
+    translation = WanderingZombies_Separator,
+}
+
+option WanderingZombies.Counter
+{
+    type = enum,
+    numValues = 5,
+    default = 3,
+    page = WanderingZombies,
+    translation = WanderingZombies_Counter,
+    valueTranslation = WanderingZombies_Counter,
+}
+
+option WanderingZombies.NumTicks
+{
+    type = integer,
+    min = 1,
+    max = 9999999,
+    default = 5,
+    page = WanderingZombies,
+    translation = WanderingZombies_NumTicks,
+}
+
+option WanderingZombies.RandTicks
+{
+    type = integer,
+    min = 0,
+    max = 9999999,
+    default = 10,
+    page = WanderingZombies,
+    translation = WanderingZombies_RandTicks,
+}
+
+option WZS.S2
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombies,
+    translation = WanderingZombies_Separator,
+}
+
+option WanderingZombies.DropdownStartHour
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownStartHour,
+    valueTranslation = WanderingZombies_DropdownStartHour,
+}
+
+option WanderingZombies.MinStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinStartHour,
+}
+
+option WanderingZombies.MaxStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxStartHour,
+}
+
+option WanderingZombies.DropdownTotalHours
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownTotalHours,
+    valueTranslation = WanderingZombies_DropdownTotalHours,
+}
+
+option WanderingZombies.MinTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinTotalHours,
+}
+
+option WanderingZombies.MaxTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 24,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxTotalHours,
+}
+
+option WanderingZombies.DropdownWanderChance
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownWanderChance,
+    valueTranslation = WanderingZombies_DropdownWanderChance,
+}
+
+option WanderingZombies.MinWanderChance
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinWanderChance,
+}
+
+option WanderingZombies.MaxWanderChance
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 100,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxWanderChance,
+}
+
+option WZS.S3
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombies,
+    translation = WanderingZombies_Separator,
+}
+
+option WanderingZombies.DropdownHomingStartHour
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownHomingStartHour,
+    valueTranslation = WanderingZombies_DropdownHomingStartHour,
+}
+
+option WanderingZombies.MinHomingStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinHomingStartHour,
+}
+
+option WanderingZombies.MaxHomingStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxHomingStartHour,
+}
+
+option WanderingZombies.DropdownHomingTotalHours
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownHomingTotalHours,
+    valueTranslation = WanderingZombies_DropdownHomingTotalHours,
+}
+
+option WanderingZombies.MinHomingTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinHomingTotalHours,
+}
+
+option WanderingZombies.MaxHomingTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 24,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxHomingTotalHours,
+}
+
+option WanderingZombies.DropdownToPlayers
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownToPlayers,
+    valueTranslation = WanderingZombies_DropdownToPlayers,
+}
+
+option WanderingZombies.MinToPlayers
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinToPlayers,
+}
+
+option WanderingZombies.MaxToPlayers
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 20,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxToPlayers,
+}
+
+option WanderingZombies.DropdownRadius
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownRadius,
+    valueTranslation = WanderingZombies_DropdownRadius,
+}
+
+option WanderingZombies.MinRadius
+{
+    type = integer,
+    min = 0,
+    max = 90,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinRadius,
+}
+
+option WanderingZombies.MaxRadius
+{
+    type = integer,
+    min = 0,
+    max = 90,
+    default = 70,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxRadius,
+}
+
+option WanderingZombies.RadiusInterrupt
+{
+    type = enum,
+    numValues = 3,
+    default = 2,
+    page = WanderingZombies,
+    translation = WanderingZombies_RadiusInterrupt,
+}
+
+option WZS.S4
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombies,
+    translation = WanderingZombies_Separator,
+}
+
+option WanderingZombies.DropdownFleeStartHour
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownFleeStartHour,
+    valueTranslation = WanderingZombies_DropdownFleeStartHour,
+}
+
+option WanderingZombies.MinFleeStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinFleeStartHour,
+}
+
+option WanderingZombies.MaxFleeStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxFleeStartHour,
+}
+
+option WanderingZombies.DropdownFleeTotalHours
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownFleeTotalHours,
+    valueTranslation = WanderingZombies_DropdownFleeTotalHours,
+}
+
+option WanderingZombies.MinFleeTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinFleeTotalHours,
+}
+
+option WanderingZombies.MaxFleeTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 24,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxFleeTotalHours,
+}
+
+option WanderingZombies.DropdownFleePlayers
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownFleePlayers,
+    valueTranslation = WanderingZombies_DropdownFleePlayers,
+}
+
+option WanderingZombies.MinFleePlayers
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinFleePlayers,
+}
+
+option WanderingZombies.MaxFleePlayers
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxFleePlayers,
+}
+
+option WanderingZombies.DropdownFleeRadius
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombies,
+    translation = WanderingZombies_DropdownFleeRadius,
+    valueTranslation = WanderingZombies_DropdownFleeRadius,
+}
+
+option WanderingZombies.MinFleeRadius
+{
+    type = integer,
+    min = 0,
+    max = 90,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MinFleeRadius,
+}
+
+option WanderingZombies.MaxFleeRadius
+{
+    type = integer,
+    min = 0,
+    max = 90,
+    default = 0,
+    page = WanderingZombies,
+    translation = WanderingZombies_MaxFleeRadius,
+}
+
+
+
+
+
+option WanderingZombies.Hordes
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_Hordes,
+}
+
+option WanderingZombies.Merge
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_Merge,
+}
+
+option WanderingZombies.MergeCooldown
+{
+    type = integer,
+    min = 0,
+    max = 9999999,
+    default = 3000,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MergeCooldown,
+}
+
+option WanderingZombies.GroupBySpeed
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_GroupBySpeed,
+}
+
+option WanderingZombies.AllowSprinters
+{
+    type = boolean,
+    default = true,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_AllowSprinters,
+}
+
+option WanderingZombies.AllowFastShamblers
+{
+    type = boolean,
+    default = true,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_AllowFastShamblers,
+}
+
+option WanderingZombies.AllowShamblers
+{
+    type = boolean,
+    default = true,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_AllowShamblers,
+}
+
+option WanderingZombies.AllowCrawlers
+{
+    type = boolean,
+    default = true,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_AllowCrawlers,
+}
+
+option WanderingZombies.HordeDestructive
+{
+    type = enum,
+    numValues = 4,
+    default = 2,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_HordeDestructive,
+    valueTranslation = WanderingZombies_HordeDestructive,
+}
+
+option WanderingZombies.HordeMaxTravel
+{
+    type = integer,
+    min = 10,
+    max = 100,
+    default = 40,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_HordeMaxTravel,
+}
+
+option WZS.HS1
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_Separator,
+}
+
+option WanderingZombies.HordeCounter
+{
+    type = enum,
+    numValues = 5,
+    default = 3,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_HordeCounter,
+    valueTranslation = WanderingZombies_HordeCounter,
+}
+
+option WanderingZombies.HordeNumTicks
+{
+    type = integer,
+    min = 1,
+    max = 9999999,
+    default = 5,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_HordeNumTicks,
+}
+
+option WanderingZombies.HordeRandTicks
+{
+    type = integer,
+    min = 0,
+    max = 9999999,
+    default = 10,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_HordeRandTicks,
+}
+
+option WanderingZombies.FollowerTicks
+{
+    type = double,
+    min = 0.0,
+    max = 100.0,
+    default = 0.0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_FollowerTicks,
+}
+
+option WZS.HS2
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_Separator,
+}
+
+option WanderingZombies.DropdownHordeStartHour
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_DropdownHordeStartHour,
+    valueTranslation = WanderingZombies_DropdownHordeStartHour,
+}
+
+option WanderingZombies.MinHordeStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MinHordeStartHour,
+}
+
+option WanderingZombies.MaxHordeStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MaxHordeStartHour,
+}
+
+option WanderingZombies.DropdownHordeTotalHours
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_DropdownHordeTotalHours,
+    valueTranslation = WanderingZombies_DropdownHordeTotalHours,
+}
+
+option WanderingZombies.MinHordeTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MinHordeTotalHours,
+}
+
+option WanderingZombies.MaxHordeTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 24,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MaxHordeTotalHours,
+}
+
+option WanderingZombies.DropdownHordeWanderChance
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_DropdownHordeWanderChance,
+    valueTranslation = WanderingZombies_DropdownHordeWanderChance,
+}
+
+option WanderingZombies.MinHordeWanderChance
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MinHordeWanderChance,
+}
+
+option WanderingZombies.MaxHordeWanderChance
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 100,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MaxHordeWanderChance,
+}
+
+option WZS.HS3
+{
+    type = boolean,
+    default = false,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_Separator,
+}
+
+option WanderingZombies.DropdownHordeHomingStartHour
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_DropdownHordeHomingStartHour,
+    valueTranslation = WanderingZombies_DropdownHordeHomingStartHour,
+}
+
+option WanderingZombies.MinHordeHomingStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MinHordeHomingStartHour,
+}
+
+option WanderingZombies.MaxHordeHomingStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MaxHordeHomingStartHour,
+}
+
+option WanderingZombies.DropdownHordeHomingTotalHours
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_DropdownHordeHomingTotalHours,
+    valueTranslation = WanderingZombies_DropdownHordeHomingTotalHours,
+}
+
+option WanderingZombies.MinHordeHomingTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MinHordeHomingTotalHours,
+}
+
+option WanderingZombies.MaxHordeHomingTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 24,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MaxHordeHomingTotalHours,
+}
+
+option WanderingZombies.DropdownHordeToPlayers
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_DropdownHordeToPlayers,
+    valueTranslation = WanderingZombies_DropdownHordeToPlayers,
+}
+
+option WanderingZombies.MinHordeToPlayers
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MinHordeToPlayers,
+}
+
+option WanderingZombies.MaxHordeToPlayers
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 20,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MaxHordeToPlayers,
+}
+
+option WanderingZombies.DropdownHordeRadius
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_DropdownHordeRadius,
+    valueTranslation = WanderingZombies_DropdownHordeRadius,
+}
+
+option WanderingZombies.MinHordeRadius
+{
+    type = integer,
+    min = 0,
+    max = 90,
+    default = 0,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MinHordeRadius,
+}
+
+option WanderingZombies.MaxHordeRadius
+{
+    type = integer,
+    min = 0,
+    max = 90,
+    default = 70,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_MaxHordeRadius,
+}
+
+option WanderingZombies.HordeRadiusInterrupt
+{
+    type = enum,
+    numValues = 3,
+    default = 2,
+    page = WanderingZombiesHordes,
+    translation = WanderingZombies_HordeRadiusInterrupt,
+}
+
+option WanderingZombies.DropdownHordeFleeStartHour
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_DropdownHordeFleeStartHour,
+    valueTranslation = WanderingZombies_DropdownHordeFleeStartHour,
+}
+
+option WanderingZombies.MinHordeFleeStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_MinHordeFleeStartHour,
+}
+
+option WanderingZombies.MaxHordeFleeStartHour
+{
+    type = integer,
+    min = 0,
+    max = 23,
+    default = 0,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_MaxHordeFleeStartHour,
+}
+
+option WanderingZombies.DropdownHordeFleeTotalHours
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_DropdownHordeFleeTotalHours,
+    valueTranslation = WanderingZombies_DropdownHordeFleeTotalHours,
+}
+
+option WanderingZombies.MinHordeFleeTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 0,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_MinHordeFleeTotalHours,
+}
+
+option WanderingZombies.MaxHordeFleeTotalHours
+{
+    type = integer,
+    min = 0,
+    max = 24,
+    default = 24,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_MaxHordeFleeTotalHours,
+}
+
+option WanderingZombies.DropdownHordeFleePlayers
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_DropdownHordeFleePlayers,
+    valueTranslation = WanderingZombies_DropdownHordeFleePlayers,
+}
+
+option WanderingZombies.MinHordeFleePlayers
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_MinHordeFleePlayers,
+}
+
+option WanderingZombies.MaxHordeFleePlayers
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_MaxHordeFleePlayers,
+}
+
+option WanderingZombies.DropdownHordeFleeRadius
+{
+    type = enum,
+    numValues = 2,
+    default = 1,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_DropdownHordeFleeRadius,
+    valueTranslation = WanderingZombies_DropdownHordeFleeRadius,
+}
+
+option WanderingZombies.MinHordeFleeRadius
+{
+    type = integer,
+    min = 0,
+    max = 90,
+    default = 0,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_MinHordeFleeRadius,
+}
+
+option WanderingZombies.MaxHordeFleeRadius
+{
+    type = integer,
+    min = 0,
+    max = 90,
+    default = 0,
+    page = WanderingZombiesHordesCont,
+    translation = WanderingZombies_MaxHordeFleeRadius,
+}
+
+
+
+
+option WanderingZombies.UpdateZedLimit
+{
+    type = integer,
+    min = 1,
+    max = 100,
+    default = 20,
+    page = WanderingZombiesPerformance,
+    translation = WanderingZombies_UpdateZedLimit,
+}
+
+option WanderingZombies.UpdateMsLimit
+{
+    type = integer,
+    min = 1,
+    max = 4,
+    default = 2,
+    page = WanderingZombiesPerformance,
+    translation = WanderingZombies_UpdateMsLimit,
+}
+
+
+
+
+option WanderingZombies.TryStopVirtual
+{
+    type = boolean,
+    default = true,
+    page = WanderingZombiesOther,
+    translation = WanderingZombies_TryStopVirtual,
+}
+
+option WanderingZombies.HoursSurvived
+{
+    type = integer,
+    min = 0,
+    max = 99999999,
+    default = 0,
+    page = WanderingZombiesOther,
+    translation = WanderingZombies_HoursSurvived,
+}
